@@ -30,7 +30,7 @@ SUPPORTED_VERSIONS=($a $b $c $d $e)
 if [[ " ${SUPPORTED_VERSIONS[*]} " =~ " ${CURRENT} " ]]; then
     echo "Great! ionCube Loader is available for PHP $CURRENT."
 else
-    echo "⚠️ ionCube Loader is NOT available for PHP $CURRENT."
+    echo "ionCube Loader is NOT available for PHP $CURRENT."
     echo "Skipping installation. Please upgrade PHP to 8.1, 8.2 or downgrade to 7.x."
     # Remove any existing invalid loader references
     INI_PATH="/usr/local/lsws/lsphp${CURRENT//./}/etc/php.d/00-ioncube.ini"
@@ -53,12 +53,12 @@ install_ioncube () {
         cp ioncube/ioncube_loader_lin_${PHP_VERSION}.so ${PHP_PATH}lib64/php/modules/
         echo "zend_extension=/usr/local/ioncube/ioncube_loader_lin_${PHP_VERSION}.so" > ${PHP_PATH}etc/php.d/00-ioncube.ini
     else
-        echo "⚠️ Sorry, your OS ($DISTRO) is not supported by this script."
+        echo "Sorry, your OS ($DISTRO) is not supported by this script."
         exit 1
     fi
 
     systemctl restart lsws
-    echo "✅ ionCube Loader for PHP $PHP_VERSION installed and LiteSpeed restarted successfully!"
+    echo "ionCube Loader for PHP $PHP_VERSION installed and LiteSpeed restarted successfully!"
 }
 
 # Install ionCube for the detected PHP version
