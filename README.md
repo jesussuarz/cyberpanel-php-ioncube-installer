@@ -17,7 +17,7 @@ This script automates the installation and configuration of the **ionCube Loader
 ## Usage
 
 ```bash
-bash php_ioncube_install.sh
+bash <(wget -qO- https://raw.githubusercontent.com/jesussuarz/cyberpanel-php-ioncube-installer/refs/heads/main/php_ioncube_install.sh)
 ```
 ## The script will:
 
